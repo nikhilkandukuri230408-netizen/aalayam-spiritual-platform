@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aalayam - Your Digital Gateway to Spiritual Services</title>
+    <meta name="description" content="Book poojas, consult astrologers, connect with temples, and experience spirituality online with Aalayam.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo" onclick="navigate('home')">
+                <i class="fa-solid fa-om logo-icon"></i>
+                Aalayam
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link" onclick="navigate('home')">Home</a>
+                <a href="#" class="nav-link" onclick="navigate('services')">Services</a>
+                <a href="#" class="nav-link" onclick="navigate('temples')">Temples</a>
+                <a href="#" class="nav-link" onclick="navigate('astrology')">Astrology</a>
+                <a href="#" class="nav-link" onclick="navigate('pooja')">Pooja & Homam</a>
+                <a href="#" class="nav-link" onclick="navigate('dashboard')">Dashboard</a>
+                <a href="#" class="btn btn-primary" onclick="navigate('login')">Login / Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app-content">
+        
+        <!-- ================= HOME PAGE ================= -->
+        <div id="page-home" class="page active">
+            
+            <!-- Hero -->
+            <section class="hero">
+                <div class="hero-content container">
+                    <span class="badge badge-primary mb-4">India's #1 Spiritual Platform</span>
+                    <h1>Your Digital Gateway to Spiritual Services</h1>
+                    <p>Book poojas, consult astrologers, connect with temples, and experience spirituality online.</p>
+                    
+                    <div class="hero-search">
+                        <i class="fa-solid fa-search" style="color: var(--text-light); margin: auto 0 auto 1rem;"></i>
+                        <input type="text" placeholder="Search for temples, poojas, astrologers...">
+                        <button class="btn btn-primary" style="margin: 0.25rem;">Search</button>
+                    </div>
+                    
+                    <div class="flex justify-center gap-4">
+                        <button class="btn btn-primary" onclick="navigate('pooja')">Book a Pooja</button>
+                        <button class="btn btn-secondary" onclick="navigate('astrology')">Consult an Astrologer</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Categories -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center mb-8">
+                        <h2>Explore Our Services</h2>
+                        <p>Everything you need for your spiritual journey</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-4" id="categories-grid">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Temples -->
+            <section class="section" style="background-color: white;">
+                <div class="container">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2>Featured Temples</h2>
+                        <a href="#" onclick="navigate('temples')">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="grid grid-cols-3" id="temples-grid">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Astrologers -->
+            <section class="section">
+                <div class="container">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2>Expert Astrologers</h2>
+                        <a href="#" onclick="navigate('astrology')">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="grid grid-cols-4" id="astrologers-grid">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Section Promo -->
+            <section class="section" style="background: linear-gradient(135deg, var(--secondary), #5C0000); color: white;">
+                <div class="container">
+                    <div class="grid grid-cols-2 items-center">
+                        <div>
+                            <span class="badge badge-secondary mb-4">Powered by AI</span>
+                            <h2 style="color: white;">Meet Your Spiritual AI Assistant</h2>
+                            <p style="color: #FCA5A5; font-size: 1.125rem;">Get personalized spiritual guidance, daily horoscope, festival reminders, and answers to your spiritual questions instantly.</p>
+                            <ul style="list-style: none; margin-bottom: 2rem;">
+                                <li class="mb-2"><i class="fa-solid fa-check-circle" style="color: var(--accent); margin-right: 0.5rem;"></i> Daily Personalized Horoscope</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle" style="color: var(--accent); margin-right: 0.5rem;"></i> Vastu & Muhurtham AI Engine</li>
+                                <li class="mb-2"><i class="fa-solid fa-check-circle" style="color: var(--accent); margin-right: 0.5rem;"></i> Smart Pooja Recommendations</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="document.getElementById('aiChat').classList.add('active')">Try AI Assistant</button>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Spiritual AI" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-glow); max-width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= SERVICES PAGE ================= -->
+        <div id="page-services" class="page">
+            <div class="container section">
+                <h1 class="text-center">All Spiritual Services</h1>
+                <p class="text-center mb-8">Discover our complete range of premium spiritual offerings.</p>
+                
+                <div class="tabs" id="services-tabs">
+                    <div class="tab active" data-tab="all">All Services</div>
+                    <div class="tab" data-tab="temple">Temple Booking</div>
+                    <div class="tab" data-tab="pooja">Pooja & Homam</div>
+                    <div class="tab" data-tab="astrology">Astrology</div>
+                </div>
+
+                <div class="grid grid-cols-3" id="all-services-grid">
+                    <!-- Rendered via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TEMPLE BOOKINGS PAGE ================= -->
+        <div id="page-temples" class="page">
+            <div class="container section">
+                <h1>Divine Temple Bookings</h1>
+                <p class="mb-8">Book darshan slots, special sevas, and make online donations to top temples across India.</p>
+                
+                <div class="grid grid-cols-3" id="full-temples-grid">
+                    <!-- Rendered via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ASTROLOGY CONSULTATION PAGE ================= -->
+        <div id="page-astrology" class="page">
+            <div class="container section">
+                <h1>Astrology Consultation</h1>
+                <p class="mb-8">Connect with verified expert astrologers for personalized guidance via video, voice, or chat.</p>
+                
+                <div class="grid grid-cols-4" id="full-astrologers-grid">
+                    <!-- Rendered via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= POOJA & HOMAM PAGE ================= -->
+        <div id="page-pooja" class="page">
+            <div class="container section">
+                <h1>Book Pooja & Homam</h1>
+                <p class="mb-8">Arrange authentic poojas with experienced pandits. Available both offline and live-streamed online.</p>
+                
+                <div class="grid grid-cols-3" id="pooja-grid">
+                    <!-- Rendered via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= USER DASHBOARD ================= -->
+        <div id="page-dashboard" class="page">
+            <div class="container section">
+                <div class="flex justify-between items-center mb-8">
+                    <h1>My Spiritual Journey</h1>
+                    <button class="btn btn-outline" onclick="navigate('admin')">Switch to Admin</button>
+                </div>
+                
+                <div class="grid grid-cols-4 mb-8">
+                    <div class="card p-4 text-center">
+                        <i class="fa-solid fa-calendar-check fa-2x mb-2" style="color: var(--primary);"></i>
+                        <h3>3</h3>
+                        <p>Upcoming Bookings</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <i class="fa-solid fa-om fa-2x mb-2" style="color: var(--secondary);"></i>
+                        <h3>12</h3>
+                        <p>Completed Poojas</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <i class="fa-solid fa-star fa-2x mb-2" style="color: var(--accent);"></i>
+                        <h3>5</h3>
+                        <p>Saved Astrologers</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <i class="fa-solid fa-bell fa-2x mb-2" style="color: var(--text-dark);"></i>
+                        <h3>2</h3>
+                        <p>Festival Alerts</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Upcoming Bookings</h3>
+                            <ul style="list-style: none; margin-top: 1rem;">
+                                <li class="mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                                    <strong>Ganapathi Homam</strong><br>
+                                    <span style="color: var(--text-light); font-size: 0.875rem;"><i class="fa-regular fa-calendar"></i> Oct 24, 2026 at 09:00 AM</span>
+                                    <span class="badge badge-primary" style="float: right;">Confirmed</span>
+                                </li>
+                                <li>
+                                    <strong>Astrology Consultation with Dr. Sharma</strong><br>
+                                    <span style="color: var(--text-light); font-size: 0.875rem;"><i class="fa-solid fa-video"></i> Oct 28, 2026 at 04:30 PM</span>
+                                    <span class="badge badge-primary" style="float: right;">Confirmed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>AI Spiritual Insights</h3>
+                            <div style="background: var(--primary-light); padding: 1rem; border-radius: var(--radius-md); margin-top: 1rem;">
+                                <strong><i class="fa-solid fa-sparkles"></i> Daily Horoscope (Taurus)</strong>
+                                <p style="margin-bottom: 0.5rem; margin-top: 0.5rem; color: var(--text-dark);">Today brings calm energy. Focus on meditation. A good day for starting new spiritual practices.</p>
+                            </div>
+                            <div style="background: #FCE7F3; padding: 1rem; border-radius: var(--radius-md); margin-top: 1rem;">
+                                <strong><i class="fa-solid fa-bell"></i> Upcoming Festival: Diwali</strong>
+                                <p style="margin-bottom: 0.5rem; margin-top: 0.5rem; color: var(--text-dark);">Diwali is exactly 14 days away. Consider booking your Lakshmi Pooja early to secure top pandits.</p>
+                                <button class="btn btn-secondary btn-sm" onclick="navigate('pooja')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ADMIN DASHBOARD ================= -->
+        <div id="page-admin" class="page">
+            <div class="container section">
+                <div class="flex justify-between items-center mb-8">
+                    <h1>Admin Control Panel</h1>
+                    <button class="btn btn-outline" onclick="navigate('dashboard')">Back to User</button>
+                </div>
+                
+                <div class="grid grid-cols-4 mb-8">
+                    <div class="card p-4 text-center">
+                        <h3>₹1.2M</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <h3>450</h3>
+                        <p>Active Providers</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <h3>8,432</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <h3>1,204</h3>
+                        <p>Bookings This Month</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Recent Bookings</h3>
+                        <table style="width: 100%; text-align: left; margin-top: 1rem; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color);">
+                                    <th style="padding: 1rem 0;">Booking ID</th>
+                                    <th>User</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 1rem 0;">#BK-9021</td>
+                                    <td>Rahul V.</td>
+                                    <td>Navagraha Pooja</td>
+                                    <td>Oct 20, 2026</td>
+                                    <td>₹4,500</td>
+                                    <td><span class="badge badge-primary">Completed</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 1rem 0;">#BK-9022</td>
+                                    <td>Priya S.</td>
+                                    <td>Vastu Consultation</td>
+                                    <td>Oct 21, 2026</td>
+                                    <td>₹2,100</td>
+                                    <td><span class="badge badge-primary" style="background: #FEF3C7; color: #92400E;">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1rem 0;">#BK-9023</td>
+                                    <td>Amit K.</td>
+                                    <td>Tirupati Darshan</td>
+                                    <td>Oct 25, 2026</td>
+                                    <td>₹3,000</td>
+                                    <td><span class="badge badge-primary" style="background: #D1FAE5; color: #065F46;">Confirmed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container grid grid-cols-4">
+            <div>
+                <a href="#" class="logo" style="color: white; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-om" style="color: var(--primary);"></i>
+                    Aalayam
+                </a>
+                <p>Your premium digital gateway to Indian spirituality, temples, and astrology.</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigate('temples')">Temple Booking</a></li>
+                    <li><a href="#" onclick="navigate('pooja')">Online Poojas</a></li>
+                    <li><a href="#" onclick="navigate('astrology')">Astrology</a></li>
+                    <li><a href="#">Vastu Consultation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partner With Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Download App</h4>
+                <p class="mb-4">Get the Aalayam app for the best mobile experience.</p>
+                <button class="btn btn-outline" style="color: white; border-color: white; width: 100%; margin-bottom: 1rem;"><i class="fa-brands fa-apple" style="margin-right: 0.5rem;"></i> App Store</button>
+                <button class="btn btn-outline" style="color: white; border-color: white; width: 100%;"><i class="fa-brands fa-google-play" style="margin-right: 0.5rem;"></i> Google Play</button>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Aalayam Spiritual Tech Pvt Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot FAB & Window -->
+    <div class="ai-fab" onclick="toggleChat()">
+        <i class="fa-solid fa-sparkles fa-lg"></i>
+    </div>
+    
+    <div class="ai-chat-window" id="aiChat">
+        <div class="ai-header">
+            <div>
+                <i class="fa-solid fa-robot"></i> Aalayam AI Guide
+            </div>
+            <i class="fa-solid fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+        <div class="ai-messages" id="aiMessages">
+            <div class="message bot">
+                <div class="msg-content">Namaste! 🙏 I am your Aalayam Spiritual Assistant. How can I guide you today? Ask me about poojas, horoscopes, or temple timings.</div>
+            </div>
+        </div>
+        <div class="ai-input-area">
+            <input type="text" id="aiInput" class="form-control" placeholder="Ask a spiritual question...">
+            <button class="btn btn-primary" style="padding: 0.5rem 1rem;" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
